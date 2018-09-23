@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Carriers</title>
+</head>
+<body>
+<!--/*@thymesVar id="carrier" type="com.bbtrack.bbtrack.model.Carrier"*/-->
+
+<h1 th:text="'Carriers'">List of Carriers</h1>
+<table>
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Auto</td>
+        <td>Max Volume</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="carrier:${carriers}">
+        <td th:text="${carrier.id}">Id</td>
+        <td th:text="${carrier.name}">Name</td>
+        <td th:text="${carrier.avto}">Avto</td>
+        <td th:text="${carrier.maxVolume}">Volume</td>
+
+    </tr>
+    </tbody>
+
+</table>
+</body>
+</html>
