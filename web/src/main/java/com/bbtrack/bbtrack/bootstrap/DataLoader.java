@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DataLoader implements CommandLineRunner {
-    private CustomerLDTService customerLDTService;
-    private CarrierService carrierService;
+    private final CustomerLDTService customerLDTService;
+    private final CarrierService carrierService;
 
     public DataLoader(CustomerLDTService customerLDTService, CarrierService carrierService) {
         this.customerLDTService = customerLDTService;

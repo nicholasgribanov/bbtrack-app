@@ -2,11 +2,13 @@ package com.bbtrack.bbtrack.services.map;
 
 import com.bbtrack.bbtrack.model.Carrier;
 import com.bbtrack.bbtrack.services.CarrierService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile("default")
 public class CarrierMapService extends AbstractMapService<Carrier, Long> implements CarrierService  {
 
     @Override
