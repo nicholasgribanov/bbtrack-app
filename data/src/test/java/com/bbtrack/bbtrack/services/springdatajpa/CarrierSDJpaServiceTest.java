@@ -60,6 +60,14 @@ public class CarrierSDJpaServiceTest {
 
     @Test
     public void save() {
+        Carrier carrier = new Carrier();
+        carrier.setId(1L);
+
+        when(carrierRepository.save(carrier)).thenReturn(carrier);
+
+        Carrier carrier1 = carrierSDJpaService.save(carrier);
+
+        assertEquals(carrier1.getId(), carrier.getId());
     }
 
     @Test
