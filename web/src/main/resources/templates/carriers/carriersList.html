@@ -3,30 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>Carriers</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <!--/*@thymesVar id="carrier" type="com.bbtrack.bbtrack.model.Carrier"*/-->
+<!--Navigation -->
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="/">BB Track</a>
+    <ul class="nav navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/carriers">Carriers</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/customerltd">Customers</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Menu item 3</a>
+        </li>
+    </ul>
+    <form class="form-inline pull-xs-right" style="margin-top: 7px;">
+        <input class="form-control" type="text" placeholder="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+</nav>
+<!-- CONTENT -->
+<div class="container-fluid" style="margin: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
 
-<h1 th:text="'Carriers'">List of Carriers</h1>
-<table>
-    <thead>
-    <tr>
-        <td>Id</td>
-        <td>Name</td>
-        <td>Auto</td>
-        <td>Max Volume</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="carrier:${carriers}">
-        <td th:text="${carrier.id}">Id</td>
-        <td th:text="${carrier.name}">Name</td>
-        <td th:text="${carrier.avto}">Avto</td>
-        <td th:text="${carrier.maxVolume}">Volume</td>
-
-    </tr>
-    </tbody>
-
-</table>
+                <div class="panel-heading">
+                    <h1 class="panel-title">Carriers</h1>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive" th:if="${not #lists.isEmpty(carriers)}">
+                        <table class="table table-hover">
+                            <thead class="thead-inverse">
+                            <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Auto</td>
+                                <td>Max Volume</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="carrier:${carriers}">
+                                <td th:text="${carrier.id}">Id</td>
+                                <td th:text="${carrier.name}">Name</td>
+                                <td th:text="${carrier.avto}">Avto</td>
+                                <td th:text="${carrier.maxVolume}">Volume</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
