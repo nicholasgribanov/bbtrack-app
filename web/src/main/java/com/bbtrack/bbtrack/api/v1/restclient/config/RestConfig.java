@@ -1,4 +1,4 @@
-package com.bbtrack.bbtrack.restclient.config;
+package com.bbtrack.bbtrack.api.v1.restclient.config;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
