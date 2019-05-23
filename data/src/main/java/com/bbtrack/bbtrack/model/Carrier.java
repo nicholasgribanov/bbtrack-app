@@ -1,9 +1,18 @@
 package com.bbtrack.bbtrack.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "carrier")
 public class Carrier extends User {
@@ -14,34 +23,4 @@ public class Carrier extends User {
     @Column(name = "max_volume")
     private String maxVolume;
 
-    public Carrier(){}
-
-    public Carrier(String avto, String maxVolume) {
-        this.avto = avto;
-        this.maxVolume = maxVolume;
-    }
-
-    public String getAvto() {
-        return avto;
-    }
-
-    public void setAvto(String avto) {
-        this.avto = avto;
-    }
-
-    public String getMaxVolume() {
-        return maxVolume;
-    }
-
-    public void setMaxVolume(String maxVolume) {
-        this.maxVolume = maxVolume;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
