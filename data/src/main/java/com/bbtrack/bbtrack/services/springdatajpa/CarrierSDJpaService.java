@@ -37,13 +37,5 @@ public class CarrierSDJpaService implements CarrierService {
         return carrierRepository.save(object);
     }
 
-    @Override
-    public void delete(Carrier object) {
-        carrierRepository.delete(object);
-    }
 
-    @Override
-    public void deleteById(Long aLong) {
-        carrierRepository.deleteById(aLong);
-    }
 }

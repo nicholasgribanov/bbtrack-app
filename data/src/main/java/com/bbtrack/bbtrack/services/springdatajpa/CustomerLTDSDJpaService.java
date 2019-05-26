@@ -36,13 +36,4 @@ public class CustomerLTDSDJpaService implements CustomerLDTService {
         return customerLTDRepository.save(object);
     }
 
-    @Override
-    public void delete(CustomerLTD object) {
-        customerLTDRepository.delete(object);
-    }
-
-    @Override
-    public void deleteById(Long aLong) {
-        customerLTDRepository.deleteById(aLong);
-    }
 }
