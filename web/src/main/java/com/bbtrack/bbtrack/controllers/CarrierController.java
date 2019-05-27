@@ -20,4 +20,5 @@ public class CarrierController {
         model.addAttribute("carriers", carrierService.findAll());
         return "carriers/carriersList";
     }
+
 }
